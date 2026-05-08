@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Bot IA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IAfriend - Tu IA emocional</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -16,8 +17,12 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: linear-gradient(135deg, #1e1b4b, #312e81, #4c1d95);
       color: white;
       min-height: 100vh;
       overflow-x: hidden;
@@ -28,33 +33,38 @@
       justify-content: space-between;
       align-items: center;
       padding: 25px 10%;
-      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
     }
 
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #38bdf8;
+      color: #f9a8d4;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 25px;
-      transition: 0.3s;
+      transition: .3s;
     }
 
     nav a:hover {
-      color: #38bdf8;
+      color: #f9a8d4;
     }
 
     .hero {
+      min-height: 85vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       text-align: center;
-      padding: 120px 20px;
+      padding: 100px 20px;
     }
 
     .hero h1 {
@@ -64,14 +74,14 @@
     }
 
     .hero span {
-      color: #38bdf8;
+      color: #f9a8d4;
     }
 
     .hero p {
-      margin-top: 25px;
-      font-size: 1.2rem;
-      color: #cbd5e1;
+      margin-top: 20px;
       max-width: 700px;
+      color: #e9d5ff;
+      font-size: 1.2rem;
     }
 
     .buttons {
@@ -85,33 +95,29 @@
     .btn {
       padding: 15px 30px;
       border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: 0.3s;
       text-decoration: none;
+      font-weight: 600;
+      transition: .3s;
     }
 
     .btn-primary {
-      background: #38bdf8;
-      color: black;
+      background: linear-gradient(135deg, #f9a8d4, #c084fc);
+      color: white;
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+      box-shadow: 0 0 25px rgba(244,114,182,.5);
     }
 
     .btn-secondary {
-      background: transparent;
-      border: 2px solid #38bdf8;
+      border: 2px solid #f9a8d4;
       color: white;
     }
 
     .btn-secondary:hover {
-      background: #38bdf8;
-      color: black;
+      background: #f9a8d4;
+      color: white;
     }
 
     .features {
@@ -122,45 +128,49 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,.08)
+      border: 1px solid rgba(255,255,255,.1);
       border-radius: 20px;
       padding: 30px;
-      transition: 0.3s;
+      transition: .3s;
       backdrop-filter: blur(10px);
     }
 
     .card:hover {
       transform: translateY(-5px);
-      border-color: #38bdf8;
+      border-color: #f9a8d4;
     }
 
     .card h3 {
+      color: #f9a8d4;
+      margin-bottom: 10px;
+    }
+
+    .chat-section {
+      text-align: center;
+      padding: 80px 10%;
+    }
+
+    .chat-section h2 {
+      font-size: 2.5rem;
       margin-bottom: 15px;
-      color: #38bdf8;
+    }
+
+    .chat-box {
+      margin: 40px auto;
+      width: 100%;
+      max-width: 1000px;
+      min-height: 650px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.03);
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px;
       color: #94a3b8;
-    }
-
-    .chat-box {
-      margin: 50px auto;
-      width: 90%;
-      max-width: 1000px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.03);
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
     }
 
     @media (max-width: 768px) {
@@ -177,8 +187,7 @@
 <body>
 
   <header>
-    <div class="logo">AgendIA</div>
-
+    <div class="logo">IAfriend</div>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#funciones">Funciones</a>
@@ -187,53 +196,52 @@
   </header>
 
   <section class="hero" id="inicio">
-    <h1>Habla con <span>AgendIA</span></h1>
-
+    <h1>Un espacio seguro para tus <span>emociones</span></h1>
     <p>
-      AgendIA es un chatbot moderno con inteligencia artificial, disponible 24/7 para responder preguntas, ayudarte y automatizar conversaciones.
+      IAfriend fue creada para escucharte con calma, comprender cómo te sientes y acompañarte cuando necesites hablar con alguien.
     </p>
-
     <div class="buttons">
-      <a href="#chat" class="btn btn-primary">Probar Bot</a>
-      <a href="#funciones" class="btn btn-secondary">Ver Funciones</a>
+      <a href="#chat" class="btn btn-primary">Hablar ahora</a>
+      <a href="#funciones" class="btn btn-secondary">Ver funciones</a>
     </div>
   </section>
 
   <section class="features" id="funciones">
     <div class="card">
-      <h3>⚡ Respuestas rápidas</h3>
-      <p>El bot responde automáticamente en segundos.</p>
+      <h3>💙 Empatía emocional</h3>
+      <p>Detecta emociones y responde con apoyo y comprensión.</p>
     </div>
-
     <div class="card">
-      <h3>🤖 IA Inteligente</h3>
-      <p>Capaz de mantener conversaciones naturales.</p>
+      <h3>⚡ Respuesta inmediata</h3>
+      <p>Disponible para hablar contigo en cualquier momento.</p>
     </div>
-
     <div class="card">
-      <h3>🌎 Disponible 24/7</h3>
-      <p>Tu bot nunca duerme y siempre está activo.</p>
+      <h3>🤖 Conversación natural</h3>
+      <p>Habla como una persona real, de forma cercana y amigable.</p>
     </div>
-
     <div class="card">
       <h3>🔒 Seguro</h3>
-      <p>Conexión segura y fácil de administrar.</p>
+      <p>Tus conversaciones están protegidas.</p>
     </div>
   </section>
 
-  
+  <section class="chat-section" id="chat">
+    <h2>Cuéntame cómo te sientes</h2>
+    <p>Estoy aquí para escucharte con tranquilidad 💜</p>
+    <div class="chat-box"></div>
+  </section>
 
   <footer>
-    © 2026 AgendIA - Página creada para tu chatbot.
+    © 2026 IAfriend - Un lugar para sentirte escuchado
   </footer>
-<script
+
+  <script
   src="https://cdn.builderbot.cloud/sdk.umd.js"
   data-builderbot-chat
   data-id="9314ebb1-0084-45cc-b741-8dbf8b6d70a4"
   data-company="IAfriend"
   data-avatar-initials="BFF"
-  data-theme-config='{"colors":{"primary":"#E5E7EB","accent":"#E5E7EB","sendButton":"#374151","sendButtonHover":"#1F2937","text":"#F9FAFB","textSecondary":"#9CA3AF","background":"#111827","backgroundChat":"#1F2937","userMessageBg":"rgba(229,231,235,0.10)","userMessageText":"#F9FAFB","agentMessageBg":"#374151","agentMessageText":"#F9FAFB","border":"#374151","hover":"rgba(229,231,235,0.08)","timestamp":"#6B7280","icon":"#9CA3AF","inputBackground":"#111827","inputPlaceholder":"#6B7280"},"spacing":{"borderRadius":"0px","messageBorderRadius":"4px"}}'
+  data-theme-config='{"colors":{"primary":"#681fd6","accent":"#E5E7EB","sendButton":"#374151","sendButtonHover":"#1F2937","text":"#F9FAFB","textSecondary":"#9CA3AF","background":"#811eae","backgroundChat":"#3b3267","userMessageBg":"#392790","userMessageText":"#F9FAFB","agentMessageBg":"#ab2db4","agentMessageText":"#ffffff","border":"#46346f","hover":"rgba(229,231,235,0.08)","timestamp":"#6B7280","icon":"#9CA3AF","inputBackground":"#414d68","inputPlaceholder":"#778ebb"},"spacing":{"borderRadius":"0px","messageBorderRadius":"4px"}}'
 ></script>
 </body>
-
 </html>
