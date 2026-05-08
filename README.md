@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IAfriend - Tu IA emocional</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e1b4b, #312e81, #4c1d95);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 10%;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #f9a8d4;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #f9a8d4;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      max-width: 900px;
+      line-height: 1.1;
+    }
+
+    .hero span {
+      color: #f9a8d4;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      max-width: 700px;
+      color: #e9d5ff;
+      font-size: 1.2rem;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f9a8d4, #c084fc);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(244,114,182,.5);
+    }
+
+    .btn-secondary {
+      border: 2px solid #f9a8d4;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #f9a8d4;
+      color: white;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 80px 10%;
+    }
+
+    .card {
+      background: rgba(255,255,255,.08)
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 30px;
+      transition: .3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #f9a8d4;
+    }
+
+    .card h3 {
+      color: #f9a8d4;
+      margin-bottom: 10px;
+    }
+
+    .chat-section {
+      text-align: center;
+      padding: 80px 10%;
+    }
+
+    .chat-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .chat-box {
+      margin: 40px auto;
+      width: 100%;
+      max-width: 1000px;
+      min-height: 650px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">IAfriend</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#funciones">Funciones</a>
+      <a href="#chat">Chat</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Un espacio seguro para tus <span>emociones</span></h1>
+    <p>
+      IAfriend fue creada para escucharte con calma, comprender cómo te sientes y acompañarte cuando necesites hablar con alguien.
+    </p>
+    <div class="buttons">
+      <a href="#chat" class="btn btn-primary">Hablar ahora</a>
+      <a href="#funciones" class="btn btn-secondary">Ver funciones</a>
+    </div>
+  </section>
+
+  <section class="features" id="funciones">
+    <div class="card">
+      <h3>💙 Empatía emocional</h3>
+      <p>Detecta emociones y responde con apoyo y comprensión.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Respuesta inmediata</h3>
+      <p>Disponible para hablar contigo en cualquier momento.</p>
+    </div>
+    <div class="card">
+      <h3>🤖 Conversación natural</h3>
+      <p>Habla como una persona real, de forma cercana y amigable.</p>
+    </div>
+    <div class="card">
+      <h3>🔒 Seguro</h3>
+      <p>Tus conversaciones están protegidas.</p>
+    </div>
+  </section>
+
+  <section class="chat-section" id="chat">
+    <h2>Cuéntame cómo te sientes</h2>
+    <p>Estoy aquí para escucharte con tranquilidad 💜</p>
+    <div class="chat-box"></div>
+  </section>
+
+  <footer>
+    © 2026 IAfriend - Un lugar para sentirte escuchado
+  </footer>
+
+  <script
+    src="https://cdn.builderbot.cloud/sdk.umd.js"
+    data-builderbot-chat
+    data-id="9314ebb1-0084-45cc-b741-8dbf8b6d70a4"
+    data-company="IAfriend"
+    data-avatar-initials="IA"
+    data-theme-config='{"colors":{"primary":"#7dd3fc","accent":"#38bdf8","sendButton":"#0ea5e9","sendButtonHover":"#0284c7","text":"#F9FAFB","textSecondary":"#CBD5E1","background":"#0f172a","backgroundChat":"#1e293b","userMessageBg":"#38bdf8","userMessageText":"#0f172a","agentMessageBg":"#334155","agentMessageText":"#F9FAFB","border":"#334155","hover":"rgba(255,255,255,0.08)","timestamp":"#94A3B8","icon":"#CBD5E1","inputBackground":"#111827","inputPlaceholder":"#6B7280"},"spacing":{"borderRadius":"18px","messageBorderRadius":"14px"}}'>
+  </script>
+
+</body>
+</html>
